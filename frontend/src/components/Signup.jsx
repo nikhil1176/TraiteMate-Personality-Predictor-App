@@ -25,7 +25,7 @@ const Signup = ({ onSignupSuccess }) => {
     try {
       // Sign up
       const signupResponse = await fetch(
-        "${API_URL}/api/auth/register",
+        `${API_URL}/api/auth/register`,
         {
           method: "POST",
           headers: {
@@ -42,7 +42,7 @@ const Signup = ({ onSignupSuccess }) => {
 
       // Auto-login
       const loginResponse = await fetch(
-        "${API_URL}/api/auth/login",
+        `${API_URL}/api/auth/login`,
         {
           method: "POST",
           headers: {
