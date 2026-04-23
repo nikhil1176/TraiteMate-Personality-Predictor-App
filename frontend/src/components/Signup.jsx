@@ -20,10 +20,12 @@ const Signup = ({ onSignupSuccess }) => {
       return;
     }
 
+    const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
+
     try {
       // Sign up
       const signupResponse = await fetch(
-        "http://localhost:5000/api/auth/register",
+        "${API_URL}/api/auth/register",
         {
           method: "POST",
           headers: {
@@ -40,7 +42,7 @@ const Signup = ({ onSignupSuccess }) => {
 
       // Auto-login
       const loginResponse = await fetch(
-        "http://localhost:5000/api/auth/login",
+        "${API_URL}/api/auth/login",
         {
           method: "POST",
           headers: {
