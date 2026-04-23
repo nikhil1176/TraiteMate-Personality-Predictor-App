@@ -245,7 +245,6 @@ const determinePersonality = (answers, quizType) => {
       "Logical Lover": 0,
     },
   }[quizType];
-  // Removed unused totalQuestions variable
 
   answers.forEach((answer) => {
     Object.keys(personalityTypes[quizType]).forEach((type) => {
@@ -292,20 +291,23 @@ const Results = () => {
     romantic: [],
   });
   const [error, setError] = useState("");
-  const hasSavedResult = useRef(false); // Prevent duplicate saves
+  const hasSavedResult = useRef(false);
+
+  // Define the dynamic API URL here so it's accessible to all useEffects
+  const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
 
   useEffect(() => {
     if (answers.length > 0 && quizType && !hasSavedResult.current) {
       const computedPersonality = determinePersonality(answers, quizType);
       setPersonality(computedPersonality);
 
-      // Save result to backend
       const token = localStorage.getItem("token");
       const user = JSON.parse(localStorage.getItem("user"));
 
       if (token && user) {
-        hasSavedResult.current = true; // Mark as saved
-        fetch("http://localhost:5000/api/quiz/results", {
+        hasSavedResult.current = true;
+        // Updated Fetch 1
+        fetch(`${API_URL}/api/quiz/results`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -322,8 +324,8 @@ const Results = () => {
             return response.json();
           })
           .then(() => {
-            // Fetch updated results after saving
-            fetch("http://localhost:5000/api/quiz/results", {
+            // Updated Fetch 2
+            fetch(`${API_URL}/api/quiz/results`, {
               headers: {
                 Authorization: `Bearer ${token}`,
               },
@@ -350,15 +352,15 @@ const Results = () => {
           .catch((err) => setError(err.message));
       }
     }
-  }, [answers, quizType]);
+  }, [answers, quizType, API_URL]); // Added API_URL to dependency array
 
   useEffect(() => {
     const token = localStorage.getItem("token");
     const user = JSON.parse(localStorage.getItem("user"));
 
     if (token && user) {
-      // Fetch all quiz results for the user on mount
-      fetch("http://localhost:5000/api/quiz/results", {
+      // Updated Fetch 3
+      fetch(`${API_URL}/api/quiz/results`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -381,7 +383,7 @@ const Results = () => {
         })
         .catch((err) => setError(err.message));
     }
-  }, []);
+  }, [API_URL]); // Added API_URL to dependency array
 
   const pieData = (result) =>
     result
