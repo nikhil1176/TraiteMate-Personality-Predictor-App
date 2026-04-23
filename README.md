@@ -21,4 +21,4 @@ TraiteMate is a full-stack MERN application designed to provide users with deep 
 4. Create a `.env` file in the `/backend` folder with your `MONGO_URI`.
 5. Run the app: 
    - Backend: `npm start` (in /backend)
-   - Frontend: `npm start` (in /frontend)
+   - Frontend: `npm run dev` (in /frontend)
