@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Container for the split layout */
+.auth-container {
+  display: flex;
+  max-width: 900px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  animation: fadeIn 0.8s ease-in-out;
+  
+}
+
+/* Left side with welcome message */
+.auth-left {
+  flex: 1;
+  background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+  color: white;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.auth-left h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.auth-left p {
+  font-size: 1rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
+}
+
+.auth-left button {
+  padding: 0.8rem 2rem;
+  background: transparent;
+  border: 2px solid white;
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.auth-left button:hover {
+  background: white;
+  color: #2d3748;
+  transform: translateY(-2px);
+}
+
+/* Right side with form */
+.auth-right {
+  flex: 1;
+  padding: 3rem;
+  background: #f7fafc;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.auth-right h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #2d3748;
+}
+
+/* Social login buttons */
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.social-button {
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.social-button:hover {
+  background: #edf2f7;
+  transform: scale(1.1);
+}
+
+/* Form group styling */
+.form-group {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.9rem;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+  color: #2d3748;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.form-group input::placeholder {
+  color: #888;
+  font-weight: 300;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #6c5ce7;
+  box-shadow: 0 0 8px rgba(108, 92, 231, 0.3);
+  transform: scale(1.02);
+}
+
+/* Or text */
+.or-text {
+  text-align: center;
+  color: #666;
+  font-size: 0.9rem;
+  margin: 1rem 0;
+}
+
+/* Forgot password link */
+.forgot-password {
+  text-align: center;
+  margin: 1rem 0;
+  color: #6c5ce7;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.forgot-password:hover {
+  color: #a29bfe;
+  text-decoration: underline;
+}
+
+/* Auth button */
+.auth-button {
+  width: 100%;
+  padding: 0.9rem;
+  background: linear-gradient(90deg, #2d3748 0%, #4a5568 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.auth-button:hover {
+  background: linear-gradient(90deg, #4a5568 0%, #718096 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .auth-container {
+    flex-direction: column;
+  }
+
+  .auth-left, .auth-right {
+    padding: 2rem;
+  }
+
+  .auth-left h1 {
+    font-size: 2rem;
+  }
+
+  .auth-left p {
+    font-size: 0.9rem;
+  }
+
+  .auth-right h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .auth-left, .auth-right {
+    padding: 1.5rem;
+  }
+
+  .auth-left h1 {
+    font-size: 1.8rem;
+  }
+
+  .auth-left p {
+    font-size: 0.85rem;
+  }
+
+  .auth-right h2 {
+    font-size: 1.3rem;
+  }
+
+  .social-button {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+
+  .auth-button {
+    padding: 0.8rem;
+    font-size: 1rem;
+  }
+}

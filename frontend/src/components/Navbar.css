@@ -1,0 +1,116 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #1e2a44; /* Darker background to match image */
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 16px 10px 10px 10px;
+  }
+  .navbar-brand {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+  .navbar-menu {
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+    margin-top: 0;
+  }
+  .nav-item {
+    font-size: 1.1rem;
+    padding: 12px 0 8px 0;
+    width: 100%;
+    text-align: left;
+    border-radius: 8px;
+    margin-bottom: 2px;
+  }
+  .logout-btn {
+    width: 100%;
+    font-size: 1.1rem;
+    margin-top: 10px;
+    border-radius: 8px;
+    padding: 12px 0;
+  }
+}
+
+/* This shrinks the image */
+.navbar-brand .navbar-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  /* CHANGE THIS RADIUS TO FIX THE GAP */
+  gap: 8px; 
+}
+
+.brand-icon {
+  height: 40px; /* Adjust height to your liking */
+  width: auto;
+  display: block;
+}
+
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Reduced gap for tighter spacing */
+}
+
+.nav-item {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 8px 12px; /* Added padding for better click area */
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.nav-item:hover {
+  color: #e0e0e0;
+  background-color: rgba(255, 255, 255, 0.1); /* Subtle hover effect */
+}
+
+.logout-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  background-color: #dc3545;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.logout-btn:hover {
+  background-color: #c82333;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .navbar-menu {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .navbar-logo:hover {
+    color: #e0e0e0;
+  }
+  .nav-item,
+  .logout-btn {
+    width: 100%;
+    text-align: center;
+  }
+}

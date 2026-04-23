@@ -1,0 +1,245 @@
+/* Results.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+.results-container {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #fef3f2 0%, #d1fae5 100%);
+  min-height: 100vh;
+  width: 100vw;
+  padding: 3rem 1rem;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.personality-meanings-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  max-width: 1200px;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.personality-meanings {
+  background: #ffffff;
+  border: 1px solid #93c5fd;
+  border-radius: 8px;
+  padding: 1.25rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  animation: fadeIn 0.8s ease-in;
+}
+
+.personality-meanings legend {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #1e3a8a;
+  padding: 0 0.5rem;
+  text-align: justify;
+}
+
+.personality-meanings ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.personality-meanings li {
+  font-size: 1rem;
+  color: #1f2937;
+  text-align: justify;
+}
+
+.personality-meanings li strong {
+  color: #000000;
+  font-weight: 600;
+}
+
+.results-box-container {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  max-width: 1200px;
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.results-box {
+  background: #ffffff;
+  border: 1px solid #93c5fd;
+  border-radius: 8px;
+  padding: 1.5rem;
+  flex: 1;
+  min-width: 280px;
+  max-width: 350px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  animation: fadeIn 0.8s ease-in;
+}
+
+.results-box h2 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #1e3a8a;
+  text-align: justify;
+  margin-bottom: 1.25rem;
+  line-height: 1.4;
+  white-space: nowrap; /* Prevent unwanted wrapping */
+}
+
+.attempt {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #93c5fd;
+}
+
+.attempt:last-child {
+  border-bottom: none;
+}
+
+.attempt h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e3a8a;
+  margin-bottom: 0.75rem;
+  text-align: justify;
+}
+
+.attempt p {
+  font-size: 1rem;
+  color: #1f2937;
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+
+.attempt p strong {
+  color: #000000;
+}
+
+.pie-chart {
+  max-width: 280px;
+  margin: 0 auto 1.25rem;
+  padding: 0.75rem;
+  background: #f8fafc;
+  border-radius: 8px;
+}
+
+.attempt ul {
+  list-style: none;
+  padding: 0;
+  text-align: justify;
+}
+
+.attempt li {
+  font-size: 0.95rem;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+  text-align: justify;
+}
+
+.home-button {
+  background: #1e3a8a;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  margin: 2rem auto;
+}
+
+.home-button:hover {
+  background: #1e40af;
+  transform: translateY(-2px);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 1024px) {
+  .results-box {
+    max-width: 320px;
+  }
+
+  .results-box h2 {
+    font-size: 1.5rem;
+    white-space: normal; /* Allow wrapping on smaller screens */
+  }
+
+  .attempt h3 {
+    font-size: 1.2rem;
+  }
+
+  .pie-chart {
+    max-width: 260px;
+  }
+}
+
+@media (max-width: 768px) {
+  .results-container {
+    padding: 2rem 1rem;
+  }
+
+  .personality-meanings-container {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .results-box-container {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .results-box {
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .personality-meanings legend,
+  .results-box h2 {
+    font-size: 1.4rem;
+    white-space: normal;
+  }
+
+  .pie-chart {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 600px) {
+  .personality-meanings legend,
+  .results-box h2 {
+    font-size: 1.3rem;
+    white-space: normal;
+  }
+
+  .personality-meanings li,
+  .attempt p {
+    font-size: 0.95rem;
+  }
+
+  .attempt h3 {
+    font-size: 1.15rem;
+  }
+
+  .attempt li {
+    font-size: 0.9rem;
+  }
+
+  .home-button {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .pie-chart {
+    max-width: 260px;
+  }
+}
